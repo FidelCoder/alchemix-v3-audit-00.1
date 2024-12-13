@@ -19,18 +19,18 @@
 The strategy utilises Yearn V3 strategy template & builds on top of Alchemix providing an automated strategy which allows users to earn yield on Alchemix tokens (primiarly alETH) by taking advantage of potential depegs. The strategy deposits to Alchemix's transmuter contract, an external keeper can claim alETH for WETH & execute a swap back to alETH at a premium to take advantage of any depeg of alETH vs WETH. 
 
 
-[Documentation](https://docs.alchemix.fi/)
-[Transmuter](https://docs.alchemix.fi/alchemix-ecosystem/transmuter)
-[Website](https://alchemix.fi/)
-[Twitter](www.twitter.com/AlchemixFi)
+- [Documentation](https://docs.alchemix.fi/)
+- [Transmuter](https://docs.alchemix.fi/alchemix-ecosystem/transmuter)
+- [Website](https://alchemix.fi/)
+- [Twitter](www.twitter.com/AlchemixFi)
 
 ## Actors
 
 
-Keeper: Has permission to call claimAndSwap (i.e. complete a claim from the transmuter for underlying asset & swap back to alx token at premium)
-Owner: Strategy owner - can call onlyOwner functions i.e. emergency functions within Yearn V3 tokenized strategy mix
-Manager: Can call functions with onlyManagement modifier - in this strategy this allows for swap routes to be added (i.e. when swapping via Velo which route is used)
-Depositor: Account that deposits the asset and holds Shares
+- Keeper: Has permission to call claimAndSwap (i.e. complete a claim from the transmuter for underlying asset & swap back to alx token at premium)
+- Owner: Strategy owner - can call onlyOwner functions i.e. emergency functions within Yearn V3 tokenized strategy mix
+- Manager: Can call functions with onlyManagement modifier - in this strategy this allows for swap routes to be added (i.e. when swapping via Velo which route is used)
+- Depositor: Account that deposits the asset and holds Shares
 
 Note there are additional roles within the Yearn V3 tokenized strategy mix that are not used in this strategy & out of scope.
 Details here : https://docs.yearn.fi/developers/v3/strategy_writing_guide
@@ -56,6 +56,8 @@ src/
 
 Blockchains:
     - Optimism
+    - Ethereum
+    - Arbitrum
 Tokens:
     - WETH
     - alETH
