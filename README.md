@@ -102,6 +102,6 @@ make test-op
 
 ## Known Issues
 
-No known issues reported
+Known issues as detected by LightChaser can be found [here](https://github.com/Cyfrin/2024-12-alchemix/issues/1)
 
 [//]: # (known-issues-close)
