@@ -1,0 +1,48 @@
+Alchemix / alchemix-v3
+Alchemix / alchemix-v3
+Overview
+Alchemix lets you instantly access loans representing your collateral's future yield. Over time, the interest your deposit earns is used to repay your debt automatically. Alchemix loans are self-repaying, interest-free, and non-liquidating.
+
+Prize distribution and scoring
+Total Prize Pool: $50,000
+
+Scoring described in the competition scoring page.
+
+Findings Severities described in detail on our docs page.
+
+Documentation
+Please refer to the repository for the docs
+Important
+Please do not share the following explainer document anywhere. This is strictly for competition use only.
+
+Explainer doc
+Scope
+Repository: https://cantina.xyz/code/e68909e6-3491-4a94-a707-ecf0c89cf72a
+Commit: 0e7c30d754336c0eb72f143e03debabaf279fa06
+Note
+Researchers can assume the price reported by the collateral to the alchemist is accurate and not subject to manipulation.
+The only in-scope behavior related to the price is that it can be assumed that pricing is based on fundamental oracles - ie, a yield token with 1 eth of backing but a market price of 0.95 eth would be priced as 1 eth in the Alchemist.
+The fact that the alAsset could temporarily depeg down to the market price of the yield token is know and acceptable behavior.
+Any other scenario that would result in bad debt for the alchemist due to an exploit would be in-scope
+Build Instructions
+Tests need a forked environment (local node or RPC API key) due to integrations with other platforms.
+
+Please note that we recommend consistently running off of the same block to get caching, the block given is the one we usually use:
+
+ forge test --fork-url <RPC-URL> --fork-block-number 21835200
+Basic POC Test
+The mandatory POC rule applies for this competition.
+
+Recommended Areas of Focus
+PositionDecay library
+The vaults
+StakingGraph
+Out of scope
+Cantina Review Findings:
+https://drive.google.com/file/d/1F4gY5r517d_xQBlqMwbx2v5Ou8pzTj8C/view?usp=sharing
+Solo Review: https://drive.google.com/file/d/1v7x8p5ZDjcWhIKNy3yLivUv8_dcUbtKL/view?usp=sharing
+Lightchaser report:
+https://gist.github.com/ChaseTheLight01/55661cc5c519a5c5ffe4032b57d506e0
+AIEth.sol, ETHUSDConverter & ETHUSDPriceFeedAdapter mocks and test are out of scope
+Contact Us
+For any issues or concerns regarding this competition, please reach out to the Cantina core team through the Cantina Discord.

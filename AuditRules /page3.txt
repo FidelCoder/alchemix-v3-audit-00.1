@@ -1,0 +1,195 @@
+📜
+Finding Severity Criteria
+Severity Matrix
+The severity of a bug is determined based on two factors: impact and likelihood. The impact relates to the potential damage of an issue, and the likelihood to how likely it is to happen.
+
+Severity
+Impact: High
+Impact: Medium
+Impact: Low
+Likelihood: High
+
+High
+
+High
+
+Medium
+
+Likelihood: Medium
+
+High
+
+Medium
+
+Low
+
+Likelihood: Low
+
+Medium
+
+Low
+
+Informational
+
+Note: This matrix is a guideline, not an absolute rule. Severity assessments require context—not just checkboxes.
+
+Contextual Criteria for Severity
+Impact
+High:
+
+Loss of User Funds: A vulnerability that could lead to a significant amount of funds being stolen or lost.
+
+Breaks Core Functionality: Causes a failure in fundamental protocol operations.
+
+Medium:
+
+Temporary Disruption or DoS: A bug that leads to temporary downtime or a denial of service (DoS). This may cause users to experience disruptions, but doesn’t necessarily compromise the security of the protocol.
+
+Minor Fund Loss or Exposure: A scenario where funds could be exposed or small amounts could be stolen. This could happen in edge cases, like token price manipulation, but isn’t a widespread risk.
+
+Breaks Non-Core Functionality
+
+Low:
+
+No Assets at Risk: Issues affecting state handling, incorrect function implementation, or logic errors that do not threaten assets.
+
+Likelihood
+High
+
+Issues that can be triggered by any user, without significant constraints
+
+Issues that will generate outsized returns to the exploiter
+
+Medium
+
+Issues with significant constraints, such as capital requirement, previous planning, or actions by other users
+
+Low
+
+Unusual scenarios, such as paused or exception state
+
+Issues that require admin actions
+
+Issues that have many constraints that cannot be induced by the user
+
+Issues that cause a significant loss to the user
+
+(When explicitly included in scope): external upgradability issues
+
+Exceptions to the severity matrix
+Unless explicitly mentioned in the contest details, or otherwise critical for the protocol, the classes of issues listed below will have their severity capped to the respective severity
+
+Issues that will be considered at most low severity
+
+Minimal Loss: Loss of small amounts due to rounding errors or minor fee discrepancies, even if it can be repeated infinite times.
+
+Weird ERC20 Tokens: Issues related to non-compliant or weird ERC20 tokens.
+
+View functions: Errors in view functions that are not used within the protocol.
+
+Issues that will be considered at most informational severity
+
+Admin errors: Issues based on admin errors, such as calling a function with wrong parameters
+
+Note: Issues based on a wrong implementation of admin functions will have the severity defined based on the severity matrix
+
+Malicious admin: Issues based on a malicious or compromised admin, unless explicitly included in the contest scope.
+
+User errors: Issues based on a user error, without significant impact on other users
+
+Issues related to the design philosophy of the protocol: for example, issues related to trade-offs made on permissionless protocols
+
+Missing basic validation
+
+Second-order effects: issues that arise based on the fix of another issue
+
+Issues that are invalid and should not be submitted
+
+Speculation on Future Code/Integrations: Issues based on future changes, integrations, or upgrades should not be submitted unless the finding directly relates to the current code and behavior.
+
+Known Issues: If a bug has already been reported in LightChaser, it will be marked as invalid.
+
+Key Considerations
+Protocol Behavior
+The competition README must be used as the main reference for protocol behavior and not other sources.
+
+Mandatory POC Rule
+By default, all competitions have a mandatory POC rule:
+
+All high and medium severity submissions must be accompanied by a coded Proof of Concept before the competition ends. This applies only to researchers with a reputation score below 80.
+
+Any exceptions to this rule will be mentioned on the specific competition page.
+
+Cantina Dedicated researchers in a competition are exempt from this rule and can provide POC upon request when needed.
+
+To be considered valid, the PoC must compile and demonstrate the impact of the issue. Additional precautions might help, such as:
+
+Mentioning which test file it's part of
+
+Making sure it's valid for the audit branch
+
+Mentioning any additional requirements for the PoC to run properly
+
+Providing the PoC output
+
+Explaining the PoC output vs. expected output
+
+Exceptions when PoC is not required:
+
+Missing function(s)
+
+Additional Judging Guidelines
+Submission Quality: Issues that do not provide the necessary context and clarity for the judge to evaluate the issue will be invalidated. This can be avoided by properly filling out the submission template.
+
+Escalation Process: If there’s a disagreement over severity or a finding, there’s an escalation process in place. However, invalid escalations will result in penalties, so be sure your case is strong before submitting.
+
+Duplication Rules
+Guidelines
+When considering whether an issue is a potential duplicate, the following criteria must be met:
+
+Clear Identification of the Root Cause
+
+The potential duplicate must explicitly identify the underlying root cause of the issue.
+
+Medium or Higher Severity Impact
+
+The potential duplicate must demonstrate an impact that is at least of Medium severity.
+
+Valid Attack Path
+
+The potential duplicate must outline a valid attack path that connects the identified root cause to the stated impact. This can be done through either:
+
+A coded proof-of-concept (POC) demonstrating the exploit, or
+
+A detailed walkthrough of the code, specifying all necessary steps and/or conditions required to trigger the issue. (This option is valid only if the reputation requirements are met.)
+
+Root Cause Resolution
+
+If addressing the root cause of the potential duplicate would effectively resolve the vulnerability, it should be considered a duplicate.
+
+Additional Considerations for Validity
+Failure to Identify the Root Cause
+
+If the root cause is not clearly identified or is inadequately addressed, the potential duplicate may be downgraded or invalidated.
+
+Insufficient Impact Analysis
+
+If the impact is not sufficiently articulated or lacks adequate analysis, the potential duplicate may also be downgraded or invalidated.
+
+Incomplete or Invalid Attack Path
+
+If the attack path from the root cause to the impact is poorly described or invalid, the potential duplicate may be downgraded or invalidated. This may occur in the following cases:
+
+Incorrect POC: If the provided POC cannot be executed, does not demonstrate the stated impact, or relies on unrealistic assumptions or conditions.
+
+Insufficient Description (for issues without a coded POC): If the description of how the root cause leads to the stated impact is incomplete, incorrect, or unclear, or if it fails to outline all necessary steps and conditions required to trigger the issue.
+
+Judges and protocol teams work under time pressure. Please make sure your findings are clear, actionable, and well-supported so they can be reviewed efficiently.
+
+While these guidelines provide a solid framework for assessing severity, it's important to recognize that smart contract security can be complex and subjective. There may be cases where issues fall outside the scope of this guide. In such instances, the final judgment of validity/severity rests with Cantina's appointed judges, who will have the final say on the outcome of the issue. For the majority of cases, however, these guidelines should serve as a reliable reference.
+
+
+
+
+TO GET MORE DETAILS CHECK THIS SITE
+https://docs.cantina.xyz/cantina-docs/cantina-competitions/judging-process/finding-severity-criteria
